@@ -72,7 +72,7 @@ function fetchData(URL) {
 }
 ;
 function renderPost(post) {
-    if (Object.keys(post).length !== 0) {
+    if ("id" in post) {
         const { userId, id, title, body } = post;
         return `<li class="post" id=${id}>
             <p class="post__userId">User:${userId}</p>
@@ -85,3 +85,37 @@ function renderPost(post) {
         return `<li class="post">There is no such post</li>`;
     }
 }
+const mockArray = [
+    {
+        id: 1,
+        title: "A",
+        isPost: false
+    },
+    {
+        id: 2,
+        title: "B",
+        isPost: false
+    },
+    {
+        id: 3,
+        title: "C",
+        isPost: false
+    }
+];
+;
+function updateObjectInArray(initialArray, key, value, patch) {
+    const array = [...initialArray];
+    const updatedArray = array.map(obj => {
+        if (obj[key] === value) {
+            return Object.assign(Object.assign({}, obj), patch);
+        }
+        else {
+            return obj;
+        }
+    });
+    return updatedArray;
+}
+;
+console.log(mockArray);
+console.log(updateObjectInArray(mockArray, 'id', 3, { 'isPost': true }));
+console.log(updateObjectInArray(mockArray, 'title', 'B', { 'id': 15 }));
