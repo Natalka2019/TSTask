@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TS</title>
+  <link rel="Stylesheet" href="./styles.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <header class="header">Blog</header>
+  <main class="main">
+    <h1 class="mainTitle">List of posts</h1>
+    <div class="actions">
+      <div class="actions__inputContainer">
+        <input class="actions__input" id="input" type="number" min="1" max="100" placeholder="Post id" />
+        <button class="actions__button filterButton">Filter</button>
+      </div>
+      <div class="actions__buttonsContainer">
+        <button class="actions__button showAllButton">Show all</button>
+      </div>
+    </div>
+    <p class="error"></p>
+    <ul class="postsList"></ul>
+  </main>
+  <footer class="footer"></footer>
+
+</body>
+
+</html>

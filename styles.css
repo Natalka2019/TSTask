@@ -1,0 +1,124 @@
+:root {
+  --primary-violet-color: #b4b7ff;
+  --secondary-violet-color:#7F00FF;
+  --white-color: #FFF;
+  --red-color: #FF0000;
+}
+
+body {
+ margin: 0;
+ background-color: var(--primary-violet-color);
+ box-sizing: border-box;
+ letter-spacing: .1rem;
+ font-family: arial, sans-serif;
+}
+
+.header, .footer {
+  background-color: var(--secondary-violet-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  color: var( --white-color);
+}
+
+.footer {
+  bottom: 0;
+}
+
+.main {
+  padding: 50px 20px 60px 20px;
+
+}
+
+.mainTitle {
+  color: var(--secondary-violet-color);
+  text-align: center;
+}
+
+.actions {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.actions__inputContainer {
+  margin-right: 10px;
+}
+
+.actions__input {
+  margin-top: 10px;
+  width: 80px;
+  border: 1px solid;
+  border-color: var(--secondary-violet-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.actions__input:focus {
+  outline: 2px solid var( --secondary-violet-color);
+}
+
+.actions__label {
+  color: var(--secondary-violet-color);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.actions__button, .modalAddButton, .successButton {
+  border: none;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: .1rem;
+  color: var(--white-color);
+  background-color: var(--secondary-violet-color);
+  margin-top: 10px;
+}
+.actions__button:hover, .modalAddButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.postsList {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.post {
+  padding: 5px 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 8px  gray;
+  margin-bottom: 20px;
+}
+
+.post__userId {
+  margin-top: 5px;
+  color: var(--secondary-violet-color);
+}
+
+.post__id {
+  text-align: right;
+  margin: 5px 0;
+  color: var(--secondary-violet-color);
+}
+
+.post__title {
+  text-align: center;
+  margin: 0 8px;
+}
+
+.post__body {
+  margin: 5px;
+}
+
+.error {
+  color: var(--red-color);
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+
