@@ -76,17 +76,17 @@ async function fetchData<T>(URL: string): Promise<T | void> {
 
 function renderPost (post: IPost): string {
 
-if("id" in post) {
-  const {userId, id, title, body} = post;
-  
-  return `<li class="post" id=${id}>
-            <p class="post__userId">User:${userId}</p>
-            <h4 class="post__title">${title}</h4>
-            <p class="post__id">Post id:${id}</p>
-            <p class="post__body">${body}</p>
-          </li>`
-} else {
-  return `<li class="post">There is no such post</li>`
-}
+  if("id" in post) {
+    const {userId, id, title, body} = post;
+    
+    return `<li class="post" id=${id}>
+              <p class="post__userId">User:${userId}</p>
+              <h4 class="post__title">${title}</h4>
+              <p class="post__id">Post id:${id}</p>
+              <p class="post__body">${body}</p>
+            </li>`
+  } else {
+    return `<li class="post">There is no such post</li>`
+  }
 
 }

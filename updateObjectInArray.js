@@ -1,8 +1,7 @@
 "use strict";
 ;
 function updateObjectInArray(initialArray, key, value, patch) {
-    const array = [...initialArray];
-    const updatedArray = array.map(obj => {
+    return initialArray.map(obj => {
         if (obj[key] === value) {
             return Object.assign(Object.assign({}, obj), patch);
         }
@@ -10,9 +9,9 @@ function updateObjectInArray(initialArray, key, value, patch) {
             return obj;
         }
     });
-    return updatedArray;
 }
 ;
+// CHECK
 const mockArray = [
     {
         id: 1,

@@ -1,13 +1,11 @@
-
 interface ObjectShape {
   id: number;
   title: string;
   isPost: boolean;
 };
 
-function updateObjectInArray <T extends object, K extends keyof T>(initialArray: T[], key: K, value: T[K], patch: Partial<T>): T[] {
-  const array = [...initialArray];
-  const updatedArray = array.map(obj => {
+function updateObjectInArray <T>(initialArray: T[], key:  keyof T, value: T[keyof T], patch: Partial<T>): T[] {
+  return initialArray.map(obj => {
     if(obj[key] === value) {
       return {
         ...obj,
@@ -17,9 +15,9 @@ function updateObjectInArray <T extends object, K extends keyof T>(initialArray:
       return obj;
     }
   });
-
-  return updatedArray;
 };
+
+// CHECK
 
 const mockArray = [
   {
@@ -41,8 +39,8 @@ const mockArray = [
 
 console.log(mockArray);
 
-console.log(updateObjectInArray<ObjectShape, 'id'>(mockArray, 'id', 3, {'isPost': true}));
-console.log(updateObjectInArray<ObjectShape, 'title'>(mockArray, 'title', 'B', {'id': 15}));
-console.log(updateObjectInArray<ObjectShape, 'isPost'>(mockArray, 'isPost', false, {'title': 'Hello'}));
+console.log(updateObjectInArray<ObjectShape>(mockArray, 'id', 3, {'isPost': true}));
+console.log(updateObjectInArray<ObjectShape>(mockArray, 'title', 'B', {'id': 15}));
+console.log(updateObjectInArray<ObjectShape>(mockArray, 'isPost', false, {'title': 'Hello'}));
 
 
